@@ -1,12 +1,10 @@
-const http = require ('http');
-const hostname = 'localhost';
-const port = 1337;
+var express = require ('express')
+var app = express()
 
-const server = http.createServer((req,res) => {
-  res.statusCode = 200;
-  res.end ('This is just a test to see if I can do it myself\n');
-});
+app.get('/', function (req, res){
+res.send ('Hello World')
+})
 
-server.listen(port,hostname, () => {
-  console.log ('This should show up in the script');
-});
+app.listen(3000, function(){
+  console.log('Server is on port 3000')
+})
