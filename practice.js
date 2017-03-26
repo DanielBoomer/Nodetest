@@ -12,9 +12,10 @@ res.send (users)
 app.get('/user/:id', function (req, res){
   var id= req.params.id
   console.log(id)
-  if (id > users.length)
-  {res.send(404)}
-res.send (users [id-1])
+  if (id <= users.length)
+  {res.send (users [id-1])}
+  else {res.send(404)}
+
 })
 
 app.listen(3000, function(){
